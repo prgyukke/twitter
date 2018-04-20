@@ -968,8 +968,7 @@ module.exports = Cancel;
 /* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(11);
-module.exports = __webpack_require__(42);
+module.exports = __webpack_require__(11);
 
 
 /***/ }),
@@ -43238,7 +43237,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             sinceId: null,
             windowHeight: window.innerHeight,
             windowWidth: window.innerWidth,
-            viewTime: 1500
+            viewTime: 1500,
+            maxTweets: 15
         };
     },
     methods: {
@@ -43266,6 +43266,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                             image: value.image + ":small",
                             text: value.text
                         });
+                        if (this.tweets.length > this.maxTweets) this.tweets.shift();
                     }.bind(this), this.viewTime * index);
                 }.bind(_this));
             });
@@ -43309,12 +43310,6 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-1f659d0c", module.exports)
   }
 }
-
-/***/ }),
-/* 42 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

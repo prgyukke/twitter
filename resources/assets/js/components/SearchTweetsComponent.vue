@@ -26,7 +26,8 @@
                 sinceId : null,
                 windowHeight : window.innerHeight,
                 windowWidth : window.innerWidth,
-                viewTime : 1500
+                viewTime : 1500,
+                maxTweets : 15,
             }
         },
         methods : {
@@ -53,6 +54,7 @@
                                     image : value.image + ":small",
                                     text : value.text,
                                 });
+                                if (this.tweets.length > this.maxTweets) this.tweets.shift();
                             }.bind(this), this.viewTime * index);
                         }.bind(this));
                     }
