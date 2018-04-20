@@ -970,27 +970,14 @@ module.exports = __webpack_require__(42);
 /* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 __webpack_require__(11);
 
 window.Vue = __webpack_require__(35);
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
 Vue.component('example-component', __webpack_require__(38));
 
-var app = new Vue({
-  el: '#app'
+var tweets = new Vue({
+    el: '#tweets'
 });
 
 /***/ }),
@@ -43291,7 +43278,7 @@ if (false) {
 /* 42 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: Error: Missing binding /usr/share/nginx/html/node_modules/node-sass/vendor/linux-x64-48/binding.node\nNode Sass could not find a binding for your current environment: Linux 64-bit with Node.js 6.x\n\nFound bindings for the following environments:\n  - OS X 64-bit with Node.js 7.x\n\nThis usually happens because your environment has changed since running `npm install`.\nRun `npm rebuild node-sass --force` to build the binding for your current environment.\n    at module.exports (/usr/share/nginx/html/node_modules/node-sass/lib/binding.js:15:13)\n    at Object.<anonymous> (/usr/share/nginx/html/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (module.js:577:32)\n    at Object.Module._extensions..js (module.js:586:10)\n    at Module.load (module.js:494:32)\n    at tryModuleLoad (module.js:453:12)\n    at Function.Module._load (module.js:445:3)\n    at Module.require (module.js:504:17)\n    at require (internal/module.js:20:19)\n    at Object.<anonymous> (/usr/share/nginx/html/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (module.js:577:32)\n    at Object.Module._extensions..js (module.js:586:10)\n    at Module.load (module.js:494:32)\n    at tryModuleLoad (module.js:453:12)\n    at Function.Module._load (module.js:445:3)\n    at Module.require (module.js:504:17)\n    at require (internal/module.js:20:19)\n    at loadLoader (/usr/share/nginx/html/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/usr/share/nginx/html/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/usr/share/nginx/html/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /usr/share/nginx/html/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/usr/share/nginx/html/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/usr/share/nginx/html/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/usr/share/nginx/html/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /usr/share/nginx/html/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/usr/share/nginx/html/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/usr/share/nginx/html/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/usr/share/nginx/html/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /usr/share/nginx/html/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/usr/share/nginx/html/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at runLoaders (/usr/share/nginx/html/node_modules/webpack/lib/NormalModule.js:195:19)\n    at /usr/share/nginx/html/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /usr/share/nginx/html/node_modules/loader-runner/lib/LoaderRunner.js:170:18\n    at loadLoader (/usr/share/nginx/html/node_modules/loader-runner/lib/loadLoader.js:27:11)\n    at iteratePitchingLoaders (/usr/share/nginx/html/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/usr/share/nginx/html/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /usr/share/nginx/html/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/usr/share/nginx/html/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/usr/share/nginx/html/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/usr/share/nginx/html/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /usr/share/nginx/html/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/usr/share/nginx/html/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/usr/share/nginx/html/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/usr/share/nginx/html/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /usr/share/nginx/html/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/usr/share/nginx/html/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/usr/share/nginx/html/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/usr/share/nginx/html/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/usr/share/nginx/html/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/usr/share/nginx/html/node_modules/webpack/lib/NormalModule.js:275:15)\n    at Compilation.buildModule (/usr/share/nginx/html/node_modules/webpack/lib/Compilation.js:151:10)\n    at moduleFactory.create (/usr/share/nginx/html/node_modules/webpack/lib/Compilation.js:454:10)\n    at factory (/usr/share/nginx/html/node_modules/webpack/lib/NormalModuleFactory.js:243:5)\n    at applyPluginsAsyncWaterfall (/usr/share/nginx/html/node_modules/webpack/lib/NormalModuleFactory.js:94:13)\n    at /usr/share/nginx/html/node_modules/tapable/lib/Tapable.js:268:11\n    at NormalModuleFactory.params.normalModuleFactory.plugin (/usr/share/nginx/html/node_modules/webpack/lib/CompatibilityPlugin.js:52:5)\n    at NormalModuleFactory.applyPluginsAsyncWaterfall (/usr/share/nginx/html/node_modules/tapable/lib/Tapable.js:272:13)\n    at resolver (/usr/share/nginx/html/node_modules/webpack/lib/NormalModuleFactory.js:69:10)\n    at process.nextTick (/usr/share/nginx/html/node_modules/webpack/lib/NormalModuleFactory.js:196:7)\n    at _combinedTickCallback (internal/process/next_tick.js:73:7)");
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
