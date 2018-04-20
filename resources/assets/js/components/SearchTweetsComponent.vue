@@ -26,8 +26,8 @@
                 sinceId : null,
                 windowHeight : window.innerHeight,
                 windowWidth : window.innerWidth,
-                viewTime : 1500,
-                maxTweets : 15,
+                viewTime : 3000,
+                maxTweets : 10,
             }
         },
         methods : {
@@ -48,13 +48,13 @@
                     res => {
                         res.data.forEach(function(value,index){
                             if (index == 1) this.sinceId = value.id;
+                            if (this.tweets.length > this.maxTweets) this.tweets.shift();
                             setTimeout(function() {
                                 this.tweets.push({
                                     position : this.setRandomPosition(),
                                     image : value.image + ":small",
                                     text : value.text,
                                 });
-                                if (this.tweets.length > this.maxTweets) this.tweets.shift();
                             }.bind(this), this.viewTime * index);
                         }.bind(this));
                     }
