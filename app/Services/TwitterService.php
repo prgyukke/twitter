@@ -16,10 +16,10 @@ class TwitterService
         );
     }
 
-    public function search($keyword)
+    public function search($keyword, $sinceId = null)
     {
         $params = [
-            "q"                => "$keyword",
+            "q"                => "$keyword exclude:retweets filter:images :$sinceId",
             "result_type"      => "recent",
             "include_entities" => true,
             "tweet_mode"       => "extended",

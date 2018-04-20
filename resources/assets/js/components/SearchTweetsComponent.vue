@@ -23,8 +23,10 @@
         data : function(){
             return {
                 tweets : [],
+                sinceId : null,
                 windowHeight : window.innerHeight,
                 windowWidth : window.innerWidth,
+                viewTime : 1500
             }
         },
         methods : {
@@ -38,22 +40,26 @@
                 return 'left: ' + this.randomLeft() + 'px; top: ' + this.randomTop() + 'px;';
             },
             getTweets() {
-                axios.get('http://192.168.33.101/api/search/' + this.keyword).then(
+                axios.post('http://192.168.33.101/api/search/', {
+                    keyword: this.keyword,
+                    sinceId: this.sinceId
+                }).then(
                     res => {
                         res.data.forEach(function(value,index){
+                            if (index == 1) this.sinceId = value.id;
                             setTimeout(function() {
                                 this.tweets.push({
                                     position : this.setRandomPosition(),
                                     image : value.image + ":small",
                                     text : value.text,
                                 });
-                            }.bind(this), 1500 * index);
+                            }.bind(this), this.viewTime * index);
                         }.bind(this));
                     }
                 );
                 setTimeout(function() {
                     this.getTweets();
-                }.bind(this), 2000);
+                }.bind(this), 20000);
             },
         }
     }

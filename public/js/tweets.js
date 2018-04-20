@@ -43235,8 +43235,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             tweets: [],
+            sinceId: null,
             windowHeight: window.innerHeight,
-            windowWidth: window.innerWidth
+            windowWidth: window.innerWidth,
+            viewTime: 1500
         };
     },
     methods: {
@@ -43252,20 +43254,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getTweets: function getTweets() {
             var _this = this;
 
-            axios.get('http://192.168.33.101/api/search/' + this.keyword).then(function (res) {
+            axios.post('http://192.168.33.101/api/search/', {
+                keyword: this.keyword,
+                sinceId: this.sinceId
+            }).then(function (res) {
                 res.data.forEach(function (value, index) {
+                    if (index == 1) this.sinceId = value.id;
                     setTimeout(function () {
                         this.tweets.push({
                             position: this.setRandomPosition(),
                             image: value.image + ":small",
                             text: value.text
                         });
-                    }.bind(this), 1500 * index);
+                    }.bind(this), this.viewTime * index);
                 }.bind(_this));
             });
             setTimeout(function () {
                 this.getTweets();
-            }.bind(this), 2000);
+            }.bind(this), 20000);
         }
     }
 });

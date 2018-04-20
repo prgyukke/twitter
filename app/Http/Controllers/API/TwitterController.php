@@ -15,11 +15,10 @@ class TwitterController extends Controller
         $this->twitterService = $twitterService;
     }
 
-    public function search($keyword)
+    public function search(Request $request)
     {
-        $rawTweets       = $this->twitterService->search($keyword);
-        $mediaTweets     = $this->twitterService->extractMediaTweets($rawTweets);
-        $formattedTweets = $this->twitterService->formatTweets($mediaTweets);
+        $rawTweets       = $this->twitterService->search($request['keyword'], $request['sinceId']);
+        $formattedTweets = $this->twitterService->formatTweets($rawTweets);
 
         return response()->json($formattedTweets);
     }

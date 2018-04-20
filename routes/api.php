@@ -17,4 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/search/{keyword}', 'API\TwitterController@search');
+Route::post('/search/', 'API\TwitterController@search');
