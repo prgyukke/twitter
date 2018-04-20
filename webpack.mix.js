@@ -11,5 +11,4 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/tweets.js', 'public/js')
-    .stylus('resources/assets/stylus/style.styl', 'public/css');
+mix.js('resources/assets/js/tweets.js', 'public/js');
