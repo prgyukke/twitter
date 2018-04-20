@@ -1,3 +1,11 @@
+@keyframes fluffy
+	0%
+		transform translateY(0)
+	50%
+		transform translateY(10px)
+	100%
+		transform translateY(0)
+
 #tweets
 	margin 10px 
 	background-color #a0d8ef
@@ -13,6 +21,10 @@
 			font-size 10px
 			padding 75px 
 			position absolute
+			-webkit-animation fluffy 5s ease infinite 
+			-moz-animation fluffy 5s ease infinite 
+			-o-animation fluffy 5s ease infinite 
+			animation fluffy 5s ease infinite 
 			
 			div.tweet
 				div.image 
