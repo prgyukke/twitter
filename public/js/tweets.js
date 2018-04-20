@@ -43241,10 +43241,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     methods: {
         randomTop: function randomTop() {
-            return Math.floor(Math.random() * (this.windowHeight + 1 - 350));
+            return Math.floor(Math.random() * (this.windowHeight + 1 - 450));
         },
         randomLeft: function randomLeft() {
-            return Math.floor(Math.random() * (this.windowWidth + 1 - 350));
+            return Math.floor(Math.random() * (this.windowWidth + 1 - 450));
         },
         setRandomPosition: function setRandomPosition() {
             return 'left: ' + this.randomLeft() + 'px; top: ' + this.randomTop() + 'px;';
@@ -43257,12 +43257,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     setTimeout(function () {
                         this.tweets.push({
                             position: this.setRandomPosition(),
-                            image: value.image,
+                            image: value.image + ":small",
                             text: value.text
                         });
-                    }.bind(this), 1000 * index);
+                    }.bind(this), 1500 * index);
                 }.bind(_this));
             });
+            setTimeout(function () {
+                this.getTweets();
+            }.bind(this), 2000);
         }
     }
 });
