@@ -29,17 +29,6 @@ class TwitterService
         return $tweets;
     }
 
-    public function extractMediaTweets($tweets)
-    {
-        $extractedTweets = [];
-        foreach ($tweets as $tweet) {
-            if (!isset($tweet->entities->media)) continue;
-            $extractedTweets[] = $tweet;
-        }
-
-        return $extractedTweets;
-    }
-
     public function formatTweets($tweets)
     {
         $formattedTweets = [];
