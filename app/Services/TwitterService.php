@@ -26,6 +26,7 @@ class TwitterService
             "result_type"      => "recent",
             "include_entities" => true,
             "tweet_mode"       => "extended",
+            "count"            => 5,
         ];
         $tweets = $this->connection->get('search/tweets', $params)->statuses;
 
