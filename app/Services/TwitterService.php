@@ -18,8 +18,11 @@ class TwitterService
 
     public function search($keyword, $sinceId = null)
     {
+        $query = "$keyword exclude:retweets filter:images";
+        if ($sinceId) $query .= " since_id:$sinceId";
+
         $params = [
-            "q"                => "$keyword exclude:retweets filter:images :$sinceId",
+            "q"                => $query,
             "result_type"      => "recent",
             "include_entities" => true,
             "tweet_mode"       => "extended",
