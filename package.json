@@ -18,6 +18,10 @@
     "lodash": "^4.17.4",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
-    "vue": "^2.5.7"
+    "vue": "^2.5.7",
+    "gulp": "^3.9.1",
+    "gulp-csscomb": "^3.0.8",
+    "gulp-plumber": "^1.1.0",
+    "gulp-stylus": "^2.6.0"
   }
 }
