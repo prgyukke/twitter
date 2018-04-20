@@ -10,10 +10,13 @@
 </head>
 <body>
     <div id="tweets" class="container">
-        <searchtweets-component></searchtweets-component>
-
-        {{ $keyword }}
+        <searchtweets-component keyword="{{ $keyword }}"></searchtweets-component>
     </div>
     <script src="/js/tweets.js"></script>
+    <script type="text/javascript">
+        var div = document.querySelector(".container");
+        var windowHeight = window.innerHeight;
+        div.style.height = (windowHeight - 20) + "px";
+    </script>
 </body>
 </html>

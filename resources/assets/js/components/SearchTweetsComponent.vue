@@ -1,9 +1,9 @@
 <template>
-    <ul>
-        <li style='left:10px; top:20px;'>
+    <ul id="search">
+        <li v-for="tweet in tweets" :style='tweet.position'>
             <div class='tweet'>
-                <div class='image'><img src='http://pbs.twimg.com/media/DbNeo5DVwAAJNDy.jpg'></div>
-                <p>RT @movic_jp: 【A3！】ビッグ缶バッジ、ポートレートセット、クリップコレクション　第二回公演／第三回公演など、新商品が続々登場！要チェック☆ https://t.co/QzblYFqv5p　#エースリー https://t.co/HzkRrkTihE</p>
+                <div class='image'><img :src='tweet.image'></div>
+                <p>{{tweet.text}}</p>
             </div>
         </li>
     </ul>
@@ -12,7 +12,46 @@
 <script>
     export default {
         mounted() {
-            console.log('Component mounted.')
+            this.getTweets()
+        },
+        props : {
+            keyword : {
+                type : String,
+                default : '検索'
+            }
+        },
+        data : function(){
+            return {
+                tweets : [],
+                windowHeight : window.innerHeight,
+                windowWidth : window.innerWidth,
+            }
+        },
+        methods : {
+            randomTop : function(){
+                return Math.floor(Math.random() * (this.windowHeight + 1 - 350));
+            },
+            randomLeft : function(){
+                return Math.floor(Math.random() * (this.windowWidth + 1 - 350));
+            },
+            setRandomPosition : function(){
+                return 'left: ' + this.randomLeft() + 'px; top: ' + this.randomTop() + 'px;';
+            },
+            getTweets() {
+                axios.get('http://192.168.33.101/api/search/' + this.keyword).then(
+                    res => {
+                        res.data.forEach(function(value,index){
+                            setTimeout(function() {
+                                this.tweets.push({
+                                    position : this.setRandomPosition(),
+                                    image : value.image,
+                                    text : value.text,
+                                });
+                            }.bind(this), 1000 * index);
+                        }.bind(this));
+                    }
+                );
+            },
         }
     }
 </script>
