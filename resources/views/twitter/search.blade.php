@@ -7,14 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>search</title>
     <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript">
-        window.Laravel = window.Laravel || {};
-        window.Laravel.csrfToken = "{{csrf_token()}}";
-    </script>
 </head>
 <body>
     <div id="tweets" class="container">
-        <example-component></example-component>
+        <searchtweets-component></searchtweets-component>
 
         {{ $keyword }}
     </div>

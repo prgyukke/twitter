@@ -974,7 +974,7 @@ __webpack_require__(11);
 
 window.Vue = __webpack_require__(35);
 
-Vue.component('example-component', __webpack_require__(38));
+Vue.component('searchtweets-component', __webpack_require__(38));
 
 var tweets = new Vue({
     el: '#tweets'
@@ -43072,7 +43072,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/ExampleComponent.vue"
+Component.options.__file = "resources/assets/js/components/SearchTweetsComponent.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -43081,9 +43081,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7168fb6a", Component.options)
+    hotAPI.createRecord("data-v-1f659d0c", Component.options)
   } else {
-    hotAPI.reload("data-v-7168fb6a", Component.options)
+    hotAPI.reload("data-v-1f659d0c", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -43219,11 +43219,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -43246,19 +43241,19 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-8 col-md-offset-2" }, [
-          _c("div", { staticClass: "panel panel-default" }, [
-            _c("div", { staticClass: "panel-heading" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "panel-body" }, [
-              _vm._v(
-                "\n                    I'm an example component!\n                "
-              )
-            ])
+    return _c("ul", [
+      _c("li", { staticStyle: { left: "10px", top: "20px" } }, [
+        _c("div", { staticClass: "tweet" }, [
+          _c("div", { staticClass: "image" }, [
+            _c("img", {
+              attrs: { src: "http://pbs.twimg.com/media/DbNeo5DVwAAJNDy.jpg" }
+            })
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "RT @movic_jp: 【A3！】ビッグ缶バッジ、ポートレートセット、クリップコレクション　第二回公演／第三回公演など、新商品が続々登場！要チェック☆ https://t.co/QzblYFqv5p　#エースリー https://t.co/HzkRrkTihE"
+            )
           ])
         ])
       ])
@@ -43270,7 +43265,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7168fb6a", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-1f659d0c", module.exports)
   }
 }
 
